@@ -1,0 +1,390 @@
+:root {
+  --primary:#df0000;
+  --secondary:#fdb01d;
+  --dark:#212121;
+  --light: #f3f3f3;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.body{
+    background-color:#131212;
+	color:white;
+}
+
+/* Banner - Hero Image*/
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(60, 64, 80, 0.7), rgba(60, 64, 80, 0.7)), url(images/BushfireBanner.gif);
+    background-position:center;
+    background-size:cover;
+    position:relative; 
+}
+
+.lead{
+    width: 90%;
+    color: #000;
+    opacity: 0.75;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 48px;
+}
+
+/*Navigation*/
+
+.nav{
+    display:flex;
+    width: 100%;
+    padding: 2% 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navmenu{
+    flex:1;
+    text-align:right;
+    background:linear-gradient(rgba(13, 12, 12),rgba(13, 12, 12, 0));
+    height: 70px;
+    justify-content: center;
+}
+
+.navmenu ul li{
+    list-style:none;
+    display:inline-block;
+    padding: 8px 12px;
+    margin:12px;
+    height:100%;
+    justify-content: center;
+    position:relative;
+}
+
+.navmenu ul li a{
+    color:#fff;
+    text-decoration: none;
+    font-size:13px;
+    transition: all 0.3s ease;
+}
+
+.navmenu ul li a:hover{
+    color:#f36f0a;
+    transition: all 0.3s ease;
+}
+
+ul li a.active {
+  color:#f36f0a;
+}
+
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.content {
+    padding: 16px;
+    background-color:#131313;
+}
+
+.sticky + .content {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Body - Main content */
+
+.img{
+    width:10px;
+    max-height:700px;
+    position:relative;
+    display:block;
+}
+
+.textbox {
+    color:#fff;
+    display:grid;
+    place-items:center;
+    align-content:center;
+    width: 85%;
+    margin:0 auto;
+    padding: 0 50px;
+    font-size: 18px;
+    min-height: 110vh;
+}
+
+/* Timeline */
+
+.timeline {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+    color: #ffffff;
+  }
+
+.timeline__box {
+    margin: 0 40px 40px 40px;
+}
+  
+.timeline__box--bg {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+  
+.timeline__bar {
+    position: relative;
+    background: #fff;
+}
+  
+.timeline__point {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    border-radius: 50%;
+}
+  
+.timeline__point--bottom {
+    top: initial;
+    bottom: 0;
+}
+  
+.timeline_date{
+    font-size:1rem;
+}
+  
+  .timeline__date--right {
+    text-align: right;
+}
+  
+  .timeline__paragraph {
+    font-size: 1em;
+}
+  
+
+.textbox__statistics {
+    color:#fff;
+    display:grid;
+    place-items:center;
+    align-content:center;
+    width: 85%;
+    margin:0 auto;
+    padding: 0 50px;
+    font-size: 18px;
+    margin-top: 30vh;
+}
+
+/* Flip Cards */
+
+.card {
+  margin: 100px auto 0;
+  padding: 10px;
+  width:400px;
+  height: 600px;
+  color: white;
+}
+
+.card__inside {
+  width:100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inside.flipped {
+  transform: rotateY('180deg');
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow:hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2) ;
+}
+
+
+.card__container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #ffffff;
+}
+
+.card {
+  margin: 100px auto 0;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.card__face--front {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+  text-align: center;
+}
+
+.card__header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, var(--primary), var(--secondary));
+  z-index: -1;
+  border-radius: 0px 0px 50% 50%;
+}
+
+.card__header h2 {
+  color: #000;
+  font-size: 28px;
+  font-weight: 700px;
+  text-align: center;
+}
+
+.card__main {
+  padding: 25px;
+}
+
+.card__main p {
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/*Slide Carousel*/
+
+.space {
+  width: 85%;
+  margin:0 auto;
+  padding: 0 50px;
+  min-height:40vh;
+}
+
+.slide-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -50px;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  transition: 0.6s ease;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  color:black;  
+  background-color: rgba(83, 83, 83, 0.1);
+}
+
+.point {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.on,
+.point:hover {
+  background-color: #666464;
+}
+
+.textbox-gallery {
+  color:#fff;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  width: 85%;
+  margin:0 auto;
+  padding: 0 50px;
+  font-size: 18px;
+  min-height: 10vh;
+}
